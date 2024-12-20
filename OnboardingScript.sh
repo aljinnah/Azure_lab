@@ -10,7 +10,9 @@ export location="centralus";
 export authType="principal";
 export correlationId="44d7ae0d-408c-4d46-b4af-daef4cfdf289";
 export cloud="AzureCloud";
-
+sudo ufw --force enable
+sudo ufw deny out from any to 169.254.169.254
+sudo ufw default allow incoming
 
 # Download the installation package
 output=$(wget https://gbl.his.arc.azure.com/azcmagent-linux -O /tmp/install_linux_azcmagent.sh 2>&1);
